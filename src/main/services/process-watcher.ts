@@ -4,6 +4,7 @@ import { IsNull, Not } from "typeorm";
 import { gameRepository } from "@main/repository";
 import { getProcesses } from "@main/helpers";
 import { WindowManager } from "./window-manager";
+import { app } from "electron";
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -27,7 +28,7 @@ export const startProcessWatcher = async () => {
     }
 
     console.time("getProcesses");
-    const processes = await getProcesses();
+    const processes = await getProcesses(app.isPackaged);
     console.timeEnd("getProcesses");
 
     for (const game of games) {
