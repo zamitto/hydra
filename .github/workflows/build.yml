@@ -11,11 +11,6 @@ jobs:
         os:
           [
             {
-              name: ubuntu-latest,
-              build_path: out/Hydra-linux-x64,
-              artifact: Hydra-linux-x64,
-            },
-            {
               name: windows-latest,
               build_path: out/Hydra-win32-x64,
               artifact: Hydra-win32-x64,
