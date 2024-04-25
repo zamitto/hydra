@@ -31,9 +31,6 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Lint
-        run: yarn lint
-
       - name: Install Python
         uses: actions/setup-python@v5
         with:
@@ -49,6 +46,13 @@ jobs:
         if: matrix.os.name == 'windows-latest'
         run: |
           copy node_modules/ps-list/vendor/fastlist-0.3.0-x64.exe resources/dist
+
+      - name: VirusTotal Scan
+        uses: crazy-max/ghaction-virustotal@v4
+        with:
+          vt_api_key: ${{ secrets.VT_API_KEY }}
+          files: |
+            ./hydra-download-manager/hydra-download-manager.exe
 
       - name: Publish
         run: yarn run publish

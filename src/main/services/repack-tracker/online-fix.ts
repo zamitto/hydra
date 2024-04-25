@@ -21,7 +21,8 @@ export const getNewRepacksFromOnlineFix = async (
   cookieJar = new CookieJar()
 ): Promise<void> => {
   const hasCredentials =
-    process.env.ONLINEFIX_USERNAME && process.env.ONLINEFIX_PASSWORD;
+    import.meta.env.MAIN_VITE_ONLINEFIX_USERNAME &&
+    import.meta.env.MAIN_VITE_ONLINEFIX_PASSWORD;
   if (!hasCredentials) return;
 
   const http = gotScraping.extend({
@@ -58,8 +59,8 @@ export const getNewRepacksFromOnlineFix = async (
     if (!preLogin.field || !preLogin.value) return;
 
     const params = new URLSearchParams({
-      login_name: process.env.ONLINEFIX_USERNAME,
-      login_password: process.env.ONLINEFIX_PASSWORD,
+      login_name: import.meta.env.MAIN_VITE_ONLINEFIX_USERNAME,
+      login_password: import.meta.env.MAIN_VITE_ONLINEFIX_PASSWORD,
       login: "submit",
       [preLogin.field]: preLogin.value,
     });

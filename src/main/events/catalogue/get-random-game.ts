@@ -1,4 +1,4 @@
-import shuffle from "lodash/shuffle";
+import { shuffle } from "lodash-es";
 
 import { getRandomSteam250List } from "@main/services";
 

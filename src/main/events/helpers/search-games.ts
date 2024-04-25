@@ -1,5 +1,5 @@
 import flexSearch from "flexsearch";
-import orderBy from "lodash/orderBy";
+import { orderBy } from "lodash-es";
 
 import type { GameRepack, GameShop, CatalogueEntry } from "@types";
 

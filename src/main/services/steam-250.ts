@@ -1,6 +1,6 @@
 import axios from "axios";
 import { JSDOM } from "jsdom";
-import shuffle from "lodash/shuffle";
+import { shuffle } from "lodash-es";
 
 export const requestSteam250 = async (path: string) => {
   return axios.get(`https://steam250.com${path}`).then((response) => {

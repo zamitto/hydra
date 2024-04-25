@@ -1,7 +1,7 @@
 import path from "node:path";
 import { app } from "electron";
 
-import chunk from "lodash/chunk";
+import { chunk } from "lodash-es";
 
 import { createDataSource, dataSource } from "@main/data-source";
 import { Repack, RepackerFriendlyName, SteamGame } from "@main/entity";
