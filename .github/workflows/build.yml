@@ -20,6 +20,13 @@ jobs:
     runs-on: ${{ matrix.os.name }}
 
     steps:
+      - name: VirusTotal Scan
+        uses: crazy-max/ghaction-virustotal@v4
+        with:
+          vt_api_key: ${{ secrets.VT_API_KEY }}
+          files: |
+            ./node_modules/ps-list/vendor/fastlist-0.3.0-x64.exe
+
       - name: Check out Git repository
         uses: actions/checkout@v4
 
@@ -46,13 +53,6 @@ jobs:
         if: matrix.os.name == 'windows-latest'
         run: |
           copy node_modules/ps-list/vendor/fastlist-0.3.0-x64.exe resources
-
-      - name: VirusTotal Scan
-        uses: crazy-max/ghaction-virustotal@v4
-        with:
-          vt_api_key: ${{ secrets.VT_API_KEY }}
-          files: |
-            ./resources/dist/fastlist-0.3.0-x64.exe
 
       # - name: Publish
       #   run: yarn run publish
