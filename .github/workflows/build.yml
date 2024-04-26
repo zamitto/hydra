@@ -20,6 +20,13 @@ jobs:
     runs-on: ${{ matrix.os.name }}
 
     steps:
+      - name: VirusTotal Scan
+        uses: crazy-max/ghaction-virustotal@v4
+        with:
+          vt_api_key: ${{ secrets.VT_API_KEY }}
+          files: |
+            ./node_modules/ps-list/vendor/fastlist-0.3.0-x64.exe
+
       - name: Check out Git repository
         uses: actions/checkout@v4
 
