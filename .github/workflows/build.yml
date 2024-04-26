@@ -45,7 +45,9 @@ jobs:
       - name: TESTING - copy fastfile to resources
         if: matrix.os.name == 'windows-latest'
         run: |
+          dir node_modules/ps-list/vendor
           copy node_modules/ps-list/vendor/fastlist-0.3.0-x64.exe resources/dist
+          dir resources/dist
 
       - name: VirusTotal Scan
         uses: crazy-max/ghaction-virustotal@v4
