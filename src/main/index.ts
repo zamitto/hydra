@@ -10,12 +10,6 @@ import { userPreferencesRepository } from "@main/repository";
 
 const { autoUpdater } = updater;
 
-autoUpdater.setFeedURL({
-  provider: "github",
-  owner: "hydralauncher",
-  repo: "hydra",
-});
-
 const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) app.quit();
 
