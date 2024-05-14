@@ -7,7 +7,7 @@
   "homepage": "https://hydralauncher.site",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hydralauncher/hydra.git"
+    "url": "https://github.com/zamitto/hydra.git"
   },
   "type": "module",
   "scripts": {

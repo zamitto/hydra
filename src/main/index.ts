@@ -12,7 +12,7 @@ const { autoUpdater } = updater;
 
 autoUpdater.setFeedURL({
   provider: "github",
-  owner: "hydralauncher",
+  owner: "zamitto",
   repo: "hydra",
 });
 
