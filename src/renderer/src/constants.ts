@@ -1,1 +1,1 @@
-export const VERSION_CODENAME = "Exodus";
+export const VERSION_CODENAME = "Exodus-2";
